@@ -1,7 +1,6 @@
-/* ARRAY NUMERI */
-const numeri = [];
-
 /* VARIABILI */
+/* array numeri */
+const numeri = [];
 /* elementi creati */
 const main = document.querySelector('main');
 const grid = document.createElement('div');
