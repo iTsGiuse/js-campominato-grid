@@ -1,16 +1,54 @@
 /* ARRAY NUMERI */
 const numeri = [];
 
-numeroGenerato100();
-console.log(numeri);
+/* VARIABILI */
+/* elementi creati */
+const main = document.querySelector('main');
+const grid = document.createElement('div');
+const row = document.createElement('div');
+/* select */
+let difficolta = document.getElementById("livello").value;
 
-numeroGenerato81();
-console.log(numeri);
+/* seleziona button da html */
+const btn = document.querySelector('#btn');
 
-numeroGenerato49();
-console.log(numeri);
+/* AGGIUNGI EVENTO IN BASE ALLA DIFFICOLTA */
+btn.addEventListener('click', function() {
+
+    if (difficolta === 'easy') {
+        createElementiMain();
+        numeroGenerato100();
+    } else if (difficolta === 'normal') {
+        createElementiMain();
+        numeroGenerato81();
+    } else if (difficolta === 'hard') {
+        createElementiMain();
+        numeroGenerato49();
+    }
+   
+});
 
 /* FUNCTIONS */
+/* FUNZIONE PER CREARE E APPENDERE ELEMENTI MAIN AL MAIN */
+function createElementiMain() {
+
+    /* SELEZIONA MAIN DA HTML */
+    main.style.display="block";
+    console.log(main);
+
+    /* CREA E APPENDI CONTAINER AL MAIN */
+    grid.classList.add('container');
+    grid.innerHTML= `<div> </div>`;
+    main.append(grid);
+    console.log(grid);
+    
+    /* CREA E APPENDI CONTAINER AL MAIN */
+    row.classList.add('row');
+    row.innerHTML= `<div> </div>`;
+    grid.append(row);
+    console.log(row);
+}
+/* FUNZIONE PER GENERARE 100 NUMERI */
 function numeroGenerato100() {
     /* CICLO PER GENERARE 100 NUMERI */
     for (let i=0; i<100; i++){
@@ -26,17 +64,23 @@ function numeroGenerato100() {
             /* VERIFICA */
             if (numberGenerato === numeri[i]){
                 numberGenerato = Math.random() * 100;
-            } else {
-                numeri.push(numberGenerato);
-                x=2;
-            }
+            } /* AGGIUNGI IL NUMERO NEL QUADRARTO E APPENDILO ALLA .ROW */
+                else {
+                    numeri.push(numberGenerato);
+                    let quadrato = document.createElement('div');
+                    quadrato.classList.add('quadratino-10');
+                    quadrato.innerHTML= `<div> ${numberGenerato} </div>`;
+                    row.append(quadrato);
+                    x=2;
+                }
         }
-
+        
     }
 
 }
-/* CICLO PER GENERARE 81 NUMERI */
+/* FUNZIONE PER GENERARE 81 NUMERI */
 function numeroGenerato81() {
+    /* CICLO PER GENERARE 81 NUMERI */
     for (let i=0; i<81; i++){
         
         let x=0;
@@ -48,6 +92,10 @@ function numeroGenerato81() {
                 numberGenerato = Math.random() * 81;
             } else {
                 numeri.push(numberGenerato);
+                let quadrato = document.createElement('div');
+                quadrato.classList.add('quadratino-10');
+                quadrato.innerHTML= `<div> ${numberGenerato} </div>`;
+                row.append(quadrato);
                 x=2;
             }
         }
@@ -55,8 +103,9 @@ function numeroGenerato81() {
     }
 
 }
-/* CICLO PER GENERARE 49 NUMERI */
+/* FUNZIONE PER GENERARE 49 NUMERI */
 function numeroGenerato49() {
+    /* CICLO PER GENERARE 49 NUMERI */
     for (let i=0; i<49; i++){
         
         let x=0;
@@ -68,6 +117,10 @@ function numeroGenerato49() {
                 numberGenerato = Math.random() * 49;
             } else {
                 numeri.push(numberGenerato);
+                let quadrato = document.createElement('div');
+                quadrato.classList.add('quadratino-10');
+                quadrato.innerHTML= `<div> ${numberGenerato} </div>`;
+                row.append(quadrato);
                 x=2;
             }
         }
