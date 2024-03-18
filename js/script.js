@@ -92,7 +92,7 @@ function numeroGenerato81() {
     for (let i=1; i<=81; i++){
         
         /* NUMERO GENERATO PRENDE IL VALORE DI I */
-        numberGenerato=i;
+       let numberGenerato = i;
 
         /* CARICHIAMO NELL'ARRAY IL VALORE DI I */
         numeri.push(numberGenerato);
