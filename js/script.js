@@ -69,7 +69,14 @@ function numeroGenerato100() {
                     numeri.push(numberGenerato);
                     let quadrato = document.createElement('div');
                     quadrato.classList.add('quadratino-10');
-  
+                    /* AGGIUNGI EVENTO QUANDO CLICCHI UN QUADRATINO */
+                    quadrato.addEventListener('click', function(){
+                        /* MOSTRA IL NUMERO DEL QUADRATINO IN CONSOLE.LOG E COME ALERT */
+                        console.log(quadrato);
+                        alert(numberGenerato);
+                        /* CAMBIA COLORE AL QUADRATINO */
+                        this.classList.add('clicked');
+                    });
                     quadrato.innerHTML= `<div> ${numberGenerato} </div>`;
                     row.append(quadrato);
                     x=2;
@@ -86,14 +93,31 @@ function numeroGenerato81() {
         
         /* NUMERO GENERATO PRENDE IL VALORE DI I */
         numberGenerato=i;
+
         /* CARICHIAMO NELL'ARRAY IL VALORE DI I */
         numeri.push(numberGenerato);
+        
         /* CREO IL QUADRATO */
         let quadrato = document.createElement('div');
+
         /* AGGIUNGO LA CLASSE */
         quadrato.classList.add('quadratino-9');
+
         /* AGGIUNGO IL NUMERO ALL'ELEMENTO */
         quadrato.innerHTML= `<div> ${numberGenerato} </div>`;
+
+        /* AGGIUNGI EVENTO QUANDO CLICCHI UN QUADRATINO */
+        quadrato.addEventListener('click', function(){
+
+           /* MOSTRA IL NUMERO DEL QUADRATINO IN CONSOLE.LOG E COME ALERT */
+            console.log(quadrato);
+            alert(numberGenerato);
+
+            /* CAMBIA COLORE AL QUADRATINO */
+            this.classList.add('clicked');
+
+        });
+
         /* AGGIUNGO L'ELEMENTO NELL'HTML */
         row.append(quadrato);
     
@@ -117,6 +141,14 @@ function numeroGenerato49() {
                 let quadrato = document.createElement('div');
                 quadrato.classList.add('quadratino-7');
                 quadrato.innerHTML= `<div> ${numberGenerato} </div>`;
+                /* AGGIUNGI EVENTO QUANDO CLICCHI UN QUADRATINO */
+                quadrato.addEventListener('click', function(){
+                    /* MOSTRA IL NUMERO DEL QUADRATINO IN CONSOLE.LOG E COME ALERT */
+                    console.log(quadrato);
+                    alert(numberGenerato);
+                    /* CAMBIA COLORE AL QUADRATINO */
+                    this.classList.add('clicked');
+                });
                 row.append(quadrato);
                 x=2;
             }
