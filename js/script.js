@@ -5,22 +5,23 @@ const numeri = [];
 const main = document.querySelector('main');
 const grid = document.createElement('div');
 const row = document.createElement('div');
-/* select */
-let difficolta = document.getElementById("livello").value;
 
 /* seleziona button da html */
-const btn = document.querySelector('#btn');
+const btn = document.querySelector('button.btn');
 
 /* AGGIUNGI EVENTO IN BASE ALLA DIFFICOLTA */
 btn.addEventListener('click', function() {
 
-    if (difficolta === 'easy') {
+    /* seleziona select */
+    let difficolta = document.querySelector('#livello').value;
+
+    if (difficolta === "easy") {
         createElementiMain();
         numeroGenerato100();
-    } else if (difficolta === 'normal') {
+    } else if (difficolta === "normal") {
         createElementiMain();
         numeroGenerato81();
-    } else if (difficolta === 'hard') {
+    } else if (difficolta === "hard") {
         createElementiMain();
         numeroGenerato49();
     }
@@ -92,7 +93,7 @@ function numeroGenerato81() {
             } else {
                 numeri.push(numberGenerato);
                 let quadrato = document.createElement('div');
-                quadrato.classList.add('quadratino-10');
+                quadrato.classList.add('quadratino-9');
                 quadrato.innerHTML= `<div> ${numberGenerato} </div>`;
                 row.append(quadrato);
                 x=2;
@@ -117,7 +118,7 @@ function numeroGenerato49() {
             } else {
                 numeri.push(numberGenerato);
                 let quadrato = document.createElement('div');
-                quadrato.classList.add('quadratino-10');
+                quadrato.classList.add('quadratino-7');
                 quadrato.innerHTML= `<div> ${numberGenerato} </div>`;
                 row.append(quadrato);
                 x=2;
