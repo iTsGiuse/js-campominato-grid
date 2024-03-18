@@ -1,7 +1,7 @@
 /* VARIABILI */
 /* array numeri */
 const numeri = [];
-/* elementi creati */
+/* elementi selezionati & creati */
 const main = document.querySelector('main');
 const grid = document.createElement('div');
 const row = document.createElement('div');
@@ -69,6 +69,7 @@ function numeroGenerato100() {
                     numeri.push(numberGenerato);
                     let quadrato = document.createElement('div');
                     quadrato.classList.add('quadratino-10');
+  
                     quadrato.innerHTML= `<div> ${numberGenerato} </div>`;
                     row.append(quadrato);
                     x=2;
@@ -81,25 +82,21 @@ function numeroGenerato100() {
 /* FUNZIONE PER GENERARE 81 NUMERI */
 function numeroGenerato81() {
     /* CICLO PER GENERARE 81 NUMERI */
-    for (let i=0; i<81; i++){
+    for (let i=1; i<=81; i++){
         
-        let x=0;
-        while (x<1) {
-
-            let numberGenerato = Math.floor(Math.random() * 81);
-
-            if (numberGenerato === numeri[i]){
-                numberGenerato = Math.random() * 81;
-            } else {
-                numeri.push(numberGenerato);
-                let quadrato = document.createElement('div');
-                quadrato.classList.add('quadratino-9');
-                quadrato.innerHTML= `<div> ${numberGenerato} </div>`;
-                row.append(quadrato);
-                x=2;
-            }
-        }
-
+        /* NUMERO GENERATO PRENDE IL VALORE DI I */
+        numberGenerato=i;
+        /* CARICHIAMO NELL'ARRAY IL VALORE DI I */
+        numeri.push(numberGenerato);
+        /* CREO IL QUADRATO */
+        let quadrato = document.createElement('div');
+        /* AGGIUNGO LA CLASSE */
+        quadrato.classList.add('quadratino-9');
+        /* AGGIUNGO IL NUMERO ALL'ELEMENTO */
+        quadrato.innerHTML= `<div> ${numberGenerato} </div>`;
+        /* AGGIUNGO L'ELEMENTO NELL'HTML */
+        row.append(quadrato);
+    
     }
 
 }
